@@ -204,4 +204,20 @@ db.users.find()
 ```
 This will display all the documents in the users collection.
 
+### Suppress Warnings and Logs: 
+- You can pass the --quiet flag to mongosh, which will suppress startup messages and other logs. This will leave you with a cleaner prompt.
+
+- Simply start mongosh with the --quiet flag like this:
+
+```bash
+mongosh --quiet
+```
+
+### Run mongosh without these messages: 
+- Alternatively, you can create an alias in your shell configuration (`~/.bashrc`, `~/.zshrc`, etc.) to always start mongosh with the `--quiet` flag:
+
+```bash
+alias mongosh='mongosh --quiet'
+```
+![Screenshot from 2025-01-04 01-18-36](https://github.com/user-attachments/assets/fa48f6e1-af22-49e3-9b80-e336f11b5cdc)
 
