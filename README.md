@@ -221,3 +221,30 @@ alias mongosh='mongosh --quiet'
 ```
 ![Screenshot from 2025-01-04 01-18-36](https://github.com/user-attachments/assets/fa48f6e1-af22-49e3-9b80-e336f11b5cdc)
 
+### Customize the MongoDB Shell Prompt
+
+To customize the prompt in `mongosh` to display only `>`, follow these steps:
+
+1. Open the `.mongoshrc.js` file in your home directory using your preferred text editor:
+
+   ```bash
+   nano ~/.mongoshrc.js
+   ```
+- Replace the content of the file with the following code:
+
+```javascript
+// Customizing the prompt to display only '>'
+Object.defineProperty(global, 'prompt', {
+  get: () => '> ',
+  configurable: true
+});
+```
+- Save and exit the file:
+
+#### Restart mongosh by running:
+
+```bash
+mongosh
+```
+![Screenshot from 2025-01-04 01-25-37](https://github.com/user-attachments/assets/17a9aabb-4838-43c4-bafd-d2fe17a9ea38)
+
