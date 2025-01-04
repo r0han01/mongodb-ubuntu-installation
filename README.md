@@ -1,6 +1,6 @@
 # MongoDB Installation on Ubuntu (from `.tgz`)
 
-![ScreenShot Tool -20250104005845](https://github.com/user-attachments/assets/1f1b77e8-c1d8-4964-b2a8-6d954c082ee7)
+![ScreenShot Tool -20250104005845](https://github.com/user-attachments/assets/ba9d91df-eb5e-4621-8ddf-d26fa717351a)
 
 This guide will walk you through installing MongoDB on an Ubuntu system using the official `.tgz` package. It includes steps for setting up MongoDB, handling permissions, troubleshooting, and using `mongosh` for database interactions.
 
