@@ -62,13 +62,25 @@ sudo mkdir -p /var/log/mongodb
 sudo chown -R $(whoami):$(whoami) /data/db
 sudo chown -R $(whoami):$(whoami) /var/log/mongodb
 ```
+
+Certainly! Here's how you can add the URL for checking MongoDB access:
+
 7. Start MongoDB
 - Now, you can start the MongoDB server. Use the following command to start MongoDB:
 
 ```bash
 mongod --dbpath /data/db --logpath /var/log/mongodb/mongod.log
 ```
-- Note: If you encounter issues with permissions, ensure that the /data/db/journal directory also has the correct permissions:
+- Once MongoDB is running, you can verify if it's accessible by navigating to the following URL in your web browser:
+
+`http://127.0.0.1:27017/`
+
+#### Note: If you see the message:
+
+```sql
+It looks like you are trying to access MongoDB over HTTP on the native driver port.
+```
+- It means MongoDB is running, but the web interface isn't enabled. This is expected, as MongoDB doesn't expose an HTTP interface by default. You should interact with it using the Mongo shell (mongosh) or through a MongoDB client.
 
 ```bash
 sudo mkdir -p /data/db/journal
