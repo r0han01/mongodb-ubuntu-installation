@@ -109,3 +109,28 @@ mongod --auth --dbpath /data/db --logpath /var/log/mongodb/mongod.log
 mongod --bind_ip_all --dbpath /data/db --logpath /var/log/mongodb/mongod.log
 ```
 Alternatively, you can specify a particular IP address for remote access.
+
+12. Stop MongoDB Server
+- If you want to stop the MongoDB server, you can do so in a few different ways:
+
+#### Using mongod Process ID (PID)
+- You can stop MongoDB by finding its process ID (PID) and killing the process:
+
+```bash
+ps aux | grep mongod
+```
+- This will show you the mongod process and its PID. Once you have the PID, you can stop the server with:
+
+```bash
+sudo kill <PID>
+```
+- Replace <PID> with the actual process ID of the mongod process.
+
+12. Using systemctl (If MongoDB is configured as a service)
+- If MongoDB is set up as a system service, you can stop it using the systemctl command:
+
+```bash
+sudo systemctl stop mongod
+```
+3. Using Ctrl + C (If Running in Foreground)
+- If MongoDB is running in the foreground (i.e., you started it manually in the terminal), you can stop it by pressing Ctrl + C in the terminal window where the mongod process is running.
