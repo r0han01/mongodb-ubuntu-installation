@@ -1,4 +1,4 @@
-# MongoDB Installation on Ubuntu (from `.tgz`)
+### MongoDB Installation on Ubuntu (from `.tgz`)
 
 ![ScreenShot Tool -20250104005845](https://github.com/user-attachments/assets/ba9d91df-eb5e-4621-8ddf-d26fa717351a)
 
@@ -148,3 +148,60 @@ sudo systemctl stop mongod
 ```
 3. Using Ctrl + C (If Running in Foreground)
 - If MongoDB is running in the foreground (i.e., you started it manually in the terminal), you can stop it by pressing Ctrl + C in the terminal window where the mongod process is running.
+
+---
+13. Using mongosh to Insert Data
+- Once MongoDB is running and you've accessed it through mongosh, you can begin performing database operations such as inserting data.
+
+
+#### Steps: 
+1. Start mongosh and Connect to MongoDB
+To access MongoDB, open a new terminal window and run:
+
+```bash
+mongosh
+```
+- This will connect you to the MongoDB instance running locally.
+
+2. Create or Switch to a Database
+- To create a new database (or switch to an existing one), use the following command:
+
+```bash
+use myDatabase
+```
+- Replace myDatabase with your preferred database name. If the database doesn't exist, MongoDB will create it once you insert data into it.
+
+3. Insert Data into a Collection
+- To insert data, you'll need to specify a collection within your database. MongoDB collections are analogous to tables in relational databases.
+
+#### Here's an example of how to insert a single document into a collection named users:
+
+```bash
+db.users.insertOne({
+  name: "John Doe",
+  email: "johndoe@example.com",
+  age: 30
+})
+```
+- This will insert a document with the specified fields (name, email, and age) into the users collection in the myDatabase database.
+
+4. Insert Multiple Documents
+- You can also insert multiple documents at once using insertMany:
+
+```bash
+db.users.insertMany([
+  { name: "Jane Smith", email: "janesmith@example.com", age: 25 },
+  { name: "Mark Johnson", email: "markj@example.com", age: 40 }
+])
+```
+- This will insert two documents into the users collection.
+
+5. Verify the Data Was Inserted
+To verify that the data has been inserted, you can query the collection:
+
+```bash
+db.users.find()
+```
+This will display all the documents in the users collection.
+
+
